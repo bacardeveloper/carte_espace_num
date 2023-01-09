@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable, depend_on_referenced_packages, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
+import 'package:espace_num/src/features/marker_function.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -10,7 +11,8 @@ class MapsView extends StatelessWidget {
   Widget build(BuildContext context) {
     double widthMax = MediaQuery.of(context).size.width;
     double heightMax = MediaQuery.of(context).size.height;
-    if (widthMax > 400) {
+
+    if (widthMax > 450) {
       return Positioned(
         top: 0,
         child: SizedBox(
@@ -34,72 +36,7 @@ class MapsView extends StatelessWidget {
                 userAgentPackageName: 'com.example.app',
               ),
               MarkerLayer(
-                markers: [
-                  Marker(
-                    point: LatLng(-12.688180, 45.074523),
-                    width: 80,
-                    height: 80,
-                    builder: (context) => Column(
-                      children: [
-                        Center(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: HexColor("#0A2647"),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(4, 3, 4, 3),
-                              child: Text(
-                                "Hamjago",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Icon(
-                          Icons.location_on_rounded,
-                          size: 25.0,
-                          color: HexColor("#0A2647"),
-                        )
-                      ],
-                    ),
-                  ),
-                  Marker(
-                    point: LatLng(-12.703513, 45.122882),
-                    width: 80,
-                    height: 80,
-                    builder: (context) => Column(
-                      children: [
-                        Center(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: HexColor("#0A2647"),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(4, 3, 4, 3),
-                              child: Text(
-                                "Bandraboua",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Icon(
-                          Icons.location_on_rounded,
-                          size: 25.0,
-                          color: HexColor("#0A2647"),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
+                markers: returnComponent(context),
               ),
             ],
           ),
@@ -114,7 +51,7 @@ class MapsView extends StatelessWidget {
           child: FlutterMap(
             options: MapOptions(
               center: latLong,
-              zoom: 10.3,
+              zoom: 10.5,
               maxZoom: 20.0,
             ),
             nonRotatedChildren: [
@@ -129,49 +66,7 @@ class MapsView extends StatelessWidget {
                 userAgentPackageName: 'com.example.app',
               ),
               MarkerLayer(
-                markers: [
-                  Marker(
-                    point: LatLng(-12.688180, 45.074523),
-                    width: 80,
-                    height: 80,
-                    builder: (context) => Icon(
-                      Icons.location_city_rounded,
-                      size: 25.0,
-                      color: Colors.red,
-                    ),
-                  ),
-                  Marker(
-                    point: LatLng(-12.703513, 45.122882),
-                    width: 80,
-                    height: 80,
-                    builder: (context) => Column(
-                      children: [
-                        Center(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: HexColor("#0A2647"),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(4, 3, 4, 3),
-                              child: Text(
-                                "Bandraboua",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Icon(
-                          Icons.location_on_rounded,
-                          size: 25.0,
-                          color: HexColor("#0A2647"),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
+                markers: returnComponent(context),
               ),
             ],
           ),
