@@ -34,7 +34,7 @@ Widget btnWidget() {
     onTap: () {
       webDownload.download(
           url:
-              "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.78-installer.msi");
+              "https://github.com/bacardevelopper/carte_espace_num/raw/main/assets/carte_espace.pdf");
     },
   );
 }
