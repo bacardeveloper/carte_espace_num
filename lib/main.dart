@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'src/views/footer/footer_view.dart';
+import 'src/views/infos/infos_views.dart';
 import 'src/views/maps/maps_views.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PagePrincipale(title: 'Flutter Demo Home Page'),
+      home: InfosPage() /*PagePrincipale(title: 'Flutter Demo Home Page')*/,
       debugShowCheckedModeBanner: false,
     );
   }
@@ -32,8 +33,8 @@ class PagePrincipale extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          FooterStack(),
           MapsView(),
+          FooterStack(),
         ],
       ),
     );

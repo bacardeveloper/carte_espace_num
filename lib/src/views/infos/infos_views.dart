@@ -3,6 +3,8 @@ import 'package:espace_num/src/features/navigation_function.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import 'scroll_body_infos.dart';
+
 class InfosPage extends StatelessWidget {
   InfosPage({super.key});
 
@@ -15,6 +17,7 @@ class InfosPage extends StatelessWidget {
       body: Stack(
         children: [
           headerInfosPage(widthMax),
+          ScrollPositionFixed(),
         ],
       ),
     );
