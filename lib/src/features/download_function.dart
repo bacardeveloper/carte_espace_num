@@ -1,3 +1,4 @@
+// ignore_for_file: unnecessary_newh, unnecessary_new
 import 'package:universal_html/html.dart' as html;
 
 abstract class DownloadService {
@@ -12,12 +13,5 @@ class WebDownloadService implements DownloadService {
 }
 
 var webDownload = new WebDownloadService();
-
-class MobileDownloadService implements DownloadService {
-  @override
-  Future<void> download({required String url}) {
-    throw UnimplementedError();
-  }
-}
 
 // https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.78-installer.msi

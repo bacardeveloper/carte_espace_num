@@ -1,8 +1,8 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'src/views/footer_view.dart';
-import 'src/views/maps_views.dart';
+import 'src/views/footer/footer_view.dart';
+import 'src/views/maps/maps_views.dart';
 
 void main() {
   runApp(const MyApp());

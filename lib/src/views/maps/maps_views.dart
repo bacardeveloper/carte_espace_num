@@ -5,7 +5,8 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class MapsView extends StatelessWidget {
-  LatLng latLong = LatLng(-12.81, 45.15);
+  LatLng positionToStart = LatLng(-12.81, 45.15);
+
   @override
   Widget build(BuildContext context) {
     double widthMax = MediaQuery.of(context).size.width;
@@ -19,8 +20,8 @@ class MapsView extends StatelessWidget {
           width: widthMax,
           child: FlutterMap(
             options: MapOptions(
-              center: latLong,
-              zoom: 11.3,
+              center: positionToStart,
+              zoom: 11.0,
               maxZoom: 20.0,
             ),
             nonRotatedChildren: [
@@ -49,7 +50,7 @@ class MapsView extends StatelessWidget {
           width: widthMax,
           child: FlutterMap(
             options: MapOptions(
-              center: latLong,
+              center: positionToStart,
               zoom: 10.5,
               maxZoom: 20.0,
             ),

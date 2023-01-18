@@ -2,6 +2,7 @@
 import 'package:espace_num/src/views/btn_dowload.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'temoins_couleur_footer.dart';
 
 class FooterStack extends StatelessWidget {
   @override
@@ -16,20 +17,12 @@ class FooterStack extends StatelessWidget {
         width: widthMax,
         height: 200.0,
         color: Colors.white,
-        child: titleAndTexte(heightMax),
+        child: returnSizeTitleAndTexte(heightMax),
       ),
     );
   }
 
-/*
-Container(
-        width: widthMax,
-        height: 200.0,
-        color: Colors.white,
-        child: titleAndTexte(heightMax),
-      )
-      */
-  Widget titleAndTexte(double heightArg) {
+  SingleChildScrollView returnSizeTitleAndTexte(double heightArg) {
     double spacerArg = 7.0;
     double fctRtrSize() {
       if (heightArg > 900) {
@@ -49,7 +42,7 @@ Container(
 
     return SingleChildScrollView(
       child: ConstrainedBox(
-        constraints: BoxConstraints(minHeight: heightArg),
+        constraints: BoxConstraints(minHeight: 280.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -57,7 +50,7 @@ Container(
               height: spacerArg,
             ),
             Text(
-              "Bienvenu sur la carte des espaces numériques de Mayotte",
+              """Bienvenu sur la carte des espaces numériques de Mayotte""",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: fctRtrSize(),
@@ -69,8 +62,7 @@ Container(
             ),
             Center(
               child: Text(
-                """Cette carte récense les éspaces et les maisons numériques de Mayotte. En cliquant sur les noms des
-          villes des informations complémentaires s'afficheront ici.""",
+                """Cette carte récense les éspaces et les maisons numériques de Mayotte.""",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: fctRtrSizeTexte(),
@@ -89,7 +81,7 @@ Container(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(6, 3, 6, 3),
                 child: Text(
-                  "Outil créer par Bacar Darwin",
+                  "Outil créé par Bacar Darwin",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 13.0,
@@ -106,67 +98,10 @@ Container(
             Container(
               height: 5.0,
             ),
-            temoinsCouleurs(),
+            TemoinsCouleur(),
           ],
         ),
       ),
-    );
-  }
-
-  Widget temoinsCouleurs() {
-    double widthSize = 220.0;
-    return Column(
-      children: [
-        SizedBox(
-          width: widthSize,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                width: 25.0,
-                height: 25.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: HexColor("#F0A510"),
-                ),
-              ),
-              Text(
-                "Espace numérique",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          height: 5,
-        ),
-        SizedBox(
-          width: widthSize,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                width: 25.0,
-                height: 25.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: HexColor("#009FDF"),
-                ),
-              ),
-              Text(
-                "Maison numérique",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }

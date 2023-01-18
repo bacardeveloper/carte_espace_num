@@ -18,7 +18,7 @@ Widget btnWidget() {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Télacrger carte PDF",
+              "Télécharger carte PDF",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
