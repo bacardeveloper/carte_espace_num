@@ -2,7 +2,6 @@
 import 'package:espace_num/src/features/navigation_function.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-
 import 'scroll_body_infos.dart';
 
 class InfosPage extends StatelessWidget {
@@ -20,6 +19,7 @@ class InfosPage extends StatelessWidget {
           ScrollPositionFixed(),
         ],
       ),
+      backgroundColor: HexColor("F5F5F5"),
     );
   }
 
